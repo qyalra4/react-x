@@ -1,0 +1,228 @@
+/*................... اكواد تنسيق الصفحة الرىيسية ...................*/
+body {
+  background: #000000;
+}
+
+
+.mainTop {
+  width: 100%;
+  height: 90vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+}
+
+.topLeft {
+  margin-left: 60px;
+  width: 650px;
+  border-radius: 10px;
+  padding-block: 20px;
+}
+
+/*.........تصميم h1.........*/
+.trtlemain {
+  margin: 0;
+  font-size: 4rem;
+  color: #cfcccc;
+  font-weight: 800;
+  direction: rtl;
+}
+
+/*.........تصميم h2.........*/
+
+.topLeft .titlesMain {
+  font-size: larger;
+  color: #eee;
+  font-weight: 600;
+  text-align: right;
+  direction: rtl;
+  font-family: sans-serif;
+}
+
+.titleserror {
+  margin-top: 28px;
+  font-size: larger;
+  color: #cfcccc;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.buttonPro {
+  margin-top: 28px;
+  color: #ebebeb;
+  background: #222;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid white;
+}
+
+.buttonPro:hover {
+  color: #000000;
+  background: #fff;
+  border: 2px solid #665905;
+}
+
+.topRight {
+  width: 650px;
+  height: 550px;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+}
+
+.topRight .image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  mask-image: linear-gradient(to left, black 85%, transparent);
+}
+
+/*..........Projects ...........*/
+.proNews {
+  padding-inline: 30px;
+  font-size: 2rem;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/*..........Projects ...........*/
+
+.projectsNews {
+  width: 100%;
+  background: black;
+  color: white;
+  padding-block: 25px;
+}
+
+.pro-cards {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  background-color: rgb(0, 0, 0);
+}
+
+.Links {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card {
+  width: 320px;
+  height: 270px;
+  border-radius: 6px;
+  background-color: #333;
+}
+
+.card .image-card {
+  margin-right: 5px;
+  margin-top: 5px;
+  width: 310px;
+  height: 180px;
+  border-radius: 6px;
+}
+
+.card h2 {
+  width: 100%;
+  padding-inline: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #555;
+
+}
+
+/* للأجهزة المحمولة */
+@media (max-width: 768px) {
+  .mainTop {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+  }
+
+  .mainTop .topLeft {
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-inline: auto;
+    padding: 20px 10px;
+  }
+
+
+  .mainTop .topLeft .trtlemain {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .mainTop .topLeft .titlesMain {
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .mainTop .topRight {
+    width: 94%;
+    height: 220px;
+    margin-inline: auto;
+  }
+.mainTop .breack {
+  width: 90%;
+  margin-block: 20px;
+  margin-inline: auto;
+}
+
+
+  .projectsNews {
+    display: block;
+    justify-content: center;
+  }
+
+  .pro-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pro-cards .card {
+    width: 94%;
+    margin-inline: auto;
+    padding-bottom: 10px;
+
+    &:hover {
+      transform: scale(1);
+    }
+  }
+
+  .pro-cards .card .image-card {
+    width: 98%;
+    height: 220px;
+  }
+
+  .pro-cards .card h2 {
+    margin-block: 10px;
+  }
+}
+
+
+/* للأجهزة اللوحية */
+@media (min-width: 768px) and (max-width: 968px) {
+  .mainTop {
+    height: 700px;
+  }
+  .pro-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+  }
+}

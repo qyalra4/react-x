@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>منصة ارباحي</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f7f7f7;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000;
+      padding: 10px;
+      color: #fff;
+    }
+    .header .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .header .logo img {
+      height: 30px;
+      width: auto;
+    }
+    .header .date-time {
+      font-size: 0.9rem;
+      color: #ffffff;
+    }
+    .main-container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      height: calc(100vh - 50px); /* طرح ارتفاع الـHeader */
+    }
+    .sidebar {
+      background-color: #eee;
+      padding: 10px;
+      overflow-y: auto;
+      border-left: 2px solid #ccc;
+    }
+    .sidebar h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .sidebar button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 8px;
+      border: none;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+    .sidebar button:hover {
+      background-color: #ddd;
+    }
+    .content {
+      padding: 15px;
+      overflow-y: auto;
+    }
+    .content-section {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .content-section h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .content-section p {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    /* تنسيق الجداول */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    table th {
+      background-color: #f2f2f2;
+    }
+    table tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+    .sidebar .footer-buttons {
+      margin-top: 20px;
+    }
+    .sidebar .footer-buttons button {
+      background-color: #dfe6e9;
+      font-weight: bold;
+    }
+    .main-container,
+    .sidebar,
+    .content {
+      overflow-x: hidden;
+    }
+    @media (max-width: 768px) {
+      .main-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+      }
+      .sidebar {
+        order: 2;
+        border-left: none;
+        border-top: 2px solid #ccc;
+      }
+      .content {
+        order: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="date-time">09/02/2025 - 0:12</div>
+    <div class="logo" dir="ltr">
+      <img src="./images/logo.jpg" alt="Logo" />
+        منصة ارباحي
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <h3>القائمة الرئيسية</h3>
+      <button onclick="showSection('arbah')">أرباح</button>
+      <button onclick="showSection('taadeelat')">التعديلات</button>
+      <button onclick="showSection('ihsaiyat')">الإحصائيات</button>
+      <button onclick="showSection('kashf-7sabat')">كشف حساب العملاء</button>
+      <button onclick="showSection('btaqat')">بطاقات الإحصائيات</button>
+      <button onclick="showSection('fawatir-bay3')">فواتير بيع</button>
+      <button onclick="showSection('sanad-qabd')">سند قبض</button>
+      <button onclick="showSection('kashf-mfassal')">كشف حساب مفصل</button>
+
+      <div class="footer-buttons">
+        <button>Backup</button>
+        <button>SHIFT</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div id="arbah" class="content-section" style="display: block;">
+        <h2>الأرباح</h2>
+        <p>جدول يوضح الأرباح الشهرية للسنة 2025:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>الشهر</th>
+              <th>المبيعات (دولار)</th>
+              <th>التكاليف (دولار)</th>
+              <th>صافي الربح (دولار)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>يناير</td><td>10,000</td><td>6,000</td><td>4,000</td></tr>
+            <tr><td>فبراير</td><td>12,000</td><td>7,000</td><td>5,000</td></tr>
+            <tr><td>مارس</td><td>15,000</td><td>8,500</td><td>6,500</td></tr>
+            <tr><td>أبريل</td><td>11,000</td><td>6,500</td><td>4,500</td></tr>
+            <tr><td>مايو</td><td>13,000</td><td>7,200</td><td>5,800</td></tr>
+            <tr><td>يونيو</td><td>14,000</td><td>8,000</td><td>6,000</td></tr>
+            <tr><td>يوليو</td><td>16,000</td><td>9,000</td><td>7,000</td></tr>
+            <tr><td>أغسطس</td><td>15,500</td><td>8,500</td><td>7,000</td></tr>
+            <tr><td>سبتمبر</td><td>14,500</td><td>8,000</td><td>6,500</td></tr>
+            <tr><td>أكتوبر</td><td>17,000</td><td>9,500</td><td>7,500</td></tr>
+            <tr><td>نوفمبر</td><td>16,500</td><td>9,000</td><td>7,500</td></tr>
+            <tr><td>ديسمبر</td><td>18,000</td><td>10,000</td><td>8,000</td></tr>
+          </tbody>
+        </table>
+        <p>يمكنك أيضًا عرض رسوم بيانية لعرض تطور الأرباح خلال العام.</p>
+      </div>
+
+      <div id="taadeelat" class="content-section">
+        <h2>التعديلات</h2>
+        <p>استمارة لتعديل بيانات النظام والمستخدمين:</p>
+        <form>
+          <div style="margin-bottom: 10px;">
+            <label for="username">اسم المستخدم:</label>
+            <input type="text" id="username" placeholder="أدخل اسم المستخدم" style="width: 100%; padding: 8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" placeholder="example@mail.com" style="width: 100%; padding: 8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="settings">إعدادات النظام:</label>
+            <textarea id="settings" rows="4" placeholder="أدخل الإعدادات هنا..." style="width: 100%; padding: 8px;"></textarea>
+          </div>
+          <button type="submit" style="padding: 10px 15px;">حفظ التعديلات</button>
+        </form>
+      </div>
+
+      <div id="ihsaiyat" class="content-section">
+        <h2>الإحصائيات</h2>
+        <p>بطاقات إحصائية توضح أهم مؤشرات الأداء:</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+          <div style="flex: 1 1 200px; background-color: #e0f7fa; padding: 15px; border-radius: 5px;">
+            <h3>عدد العملاء</h3>
+            <p style="font-size: 1.5rem; font-weight: bold;">1,250</p>
+          </div>
+          <div style="flex: 1 1 200px; background-color: #e8f5e9; padding: 15px; border-radius: 5px;">
+            <h3>المبيعات الإجمالية</h3>
+            <p style="font-size: 1.5rem; font-weight: bold;">$120,000</p>
+          </div>
+          <div style="flex: 1 1 200px; background-color: #fff3e0; padding: 15px; border-radius: 5px;">
+            <h3>صافي الأرباح</h3>
+            <p style="font-size: 1.5rem; font-weight: bold;">$45,000</p>
+          </div>
+          <div style="flex: 1 1 200px; background-color: #f3e5f5; padding: 15px; border-radius: 5px;">
+            <h3>عدد الفواتير</h3>
+            <p style="font-size: 1.5rem; font-weight: bold;">320</p>
+          </div>
+        </div>
+        <p style="margin-top: 15px;">يمكنك استخدام الرسوم البيانية والمخططات لتحليل المزيد من البيانات.</p>
+      </div>
+
+      <div id="kashf-7sabat" class="content-section">
+        <h2>كشف حساب العملاء</h2>
+        <p>جدول مفصّل لحسابات العملاء:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>اسم العميل</th>
+              <th>رقم الحساب</th>
+              <th>الرصيد (دولار)</th>
+              <th>آخر عملية</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>عميل 1</td><td>ACC001</td><td>350</td><td>2025-01-15</td></tr>
+            <tr><td>عميل 2</td><td>ACC002</td><td>1,200</td><td>2025-02-10</td></tr>
+            <tr><td>عميل 3</td><td>ACC003</td><td>500</td><td>2025-03-05</td></tr>
+            <tr><td>عميل 4</td><td>ACC004</td><td>750</td><td>2025-04-20</td></tr>
+            <tr><td>عميل 5</td><td>ACC005</td><td>980</td><td>2025-05-12</td></tr>
+            <tr><td>عميل 6</td><td>ACC006</td><td>1,500</td><td>2025-06-18</td></tr>
+            <tr><td>عميل 7</td><td>ACC007</td><td>620</td><td>2025-07-03</td></tr>
+            <tr><td>عميل 8</td><td>ACC008</td><td>850</td><td>2025-08-25</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="btaqat" class="content-section">
+        <h2>بطاقات الإحصائيات</h2>
+        <p>بطاقات صغيرة تحتوي على ملخصات البيانات الرئيسية:</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+          <div style="flex: 1 1 180px; background-color: #fce4ec; padding: 15px; border-radius: 5px;">
+            <h3>عدد الطلبات</h3>
+            <p style="font-size: 1.4rem; font-weight: bold;">980</p>
+          </div>
+          <div style="flex: 1 1 180px; background-color: #e8eaf6; padding: 15px; border-radius: 5px;">
+            <h3>متوسط الفاتورة</h3>
+            <p style="font-size: 1.4rem; font-weight: bold;">$125</p>
+          </div>
+          <div style="flex: 1 1 180px; background-color: #e0f2f1; padding: 15px; border-radius: 5px;">
+            <h3>العملاء الجدد</h3>
+            <p style="font-size: 1.4rem; font-weight: bold;">75</p>
+          </div>
+          <div style="flex: 1 1 180px; background-color: #fff9c4; padding: 15px; border-radius: 5px;">
+            <h3>الشكاوى</h3>
+            <p style="font-size: 1.4rem; font-weight: bold;">12</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="fawatir-bay3" class="content-section">
+        <h2>فواتير بيع</h2>
+        <p>جدول يوضح قائمة فواتير البيع مع التفاصيل:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>رقم الفاتورة</th>
+              <th>التاريخ</th>
+              <th>اسم العميل</th>
+              <th>المبلغ (دولار)</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>INV1001</td><td>2025-01-10</td><td>عميل 1</td><td>450</td><td>مدفوعة</td></tr>
+            <tr><td>INV1002</td><td>2025-01-15</td><td>عميل 2</td><td>320</td><td>مدفوعة</td></tr>
+            <tr><td>INV1003</td><td>2025-02-05</td><td>عميل 3</td><td>780</td><td>غير مدفوعة</td></tr>
+            <tr><td>INV1004</td><td>2025-02-20</td><td>عميل 4</td><td>600</td><td>مدفوعة</td></tr>
+            <tr><td>INV1005</td><td>2025-03-12</td><td>عميل 5</td><td>900</td><td>مدفوعة</td></tr>
+            <tr><td>INV1006</td><td>2025-03-28</td><td>عميل 6</td><td>550</td><td>غير مدفوعة</td></tr>
+            <tr><td>INV1007</td><td>2025-04-05</td><td>عميل 7</td><td>400</td><td>مدفوعة</td></tr>
+            <tr><td>INV1008</td><td>2025-04-22</td><td>عميل 8</td><td>650</td><td>مدفوعة</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sanad-qabd" class="content-section">
+        <h2>سند قبض</h2>
+        <p>سجل سندات القبض:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>رقم السند</th>
+              <th>التاريخ</th>
+              <th>اسم العميل</th>
+              <th>المبلغ (دولار)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>RCPT001</td><td>2025-01-12</td><td>عميل 1</td><td>450</td></tr>
+            <tr><td>RCPT002</td><td>2025-01-18</td><td>عميل 2</td><td>320</td></tr>
+            <tr><td>RCPT003</td><td>2025-02-08</td><td>عميل 3</td><td>780</td></tr>
+            <tr><td>RCPT004</td><td>2025-02-25</td><td>عميل 4</td><td>600</td></tr>
+            <tr><td>RCPT005</td><td>2025-03-15</td><td>عميل 5</td><td>900</td></tr>
+          </tbody>
+        </table>
+        <p>يمكن إضافة نموذج لإدخال سند قبض جديد:</p>
+        <form>
+          <div style="margin-bottom: 10px;">
+            <label for="rcpt-number">رقم السند:</label>
+            <input type="text" id="rcpt-number" placeholder="أدخل رقم السند" style="width: 100%; padding: 8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="rcpt-date">التاريخ:</label>
+            <input type="date" id="rcpt-date" style="width: 100%; padding: 8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="rcpt-client">اسم العميل:</label>
+            <input type="text" id="rcpt-client" placeholder="أدخل اسم العميل" style="width: 100%; padding: 8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="rcpt-amount">المبلغ (دولار):</label>
+            <input type="number" id="rcpt-amount" placeholder="أدخل المبلغ" style="width: 100%; padding: 8px;">
+          </div>
+          <button type="submit" style="padding: 10px 15px;">إضافة سند قبض</button>
+        </form>
+      </div>
+
+      <div id="kashf-mfassal" class="content-section">
+        <h2>كشف حساب مفصل</h2>
+        <p>سجل مفصل لجميع الحركات المالية:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>التاريخ</th>
+              <th>النوع</th>
+              <th>الوصف</th>
+              <th>المبلغ (دولار)</th>
+              <th>الرصيد المتبقي (دولار)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2025-01-05</td><td>إضافة</td><td>بيع منتج A</td><td>500</td><td>500</td></tr>
+            <tr><td>2025-01-07</td><td>خصم</td><td>مرتجع منتج B</td><td>-100</td><td>400</td></tr>
+            <tr><td>2025-01-10</td><td>إضافة</td><td>بيع منتج C</td><td>700</td><td>1,100</td></tr>
+            <tr><td>2025-01-15</td><td>خصم</td><td>خصم لعميل 2</td><td>-150</td><td>950</td></tr>
+            <tr><td>2025-01-20</td><td>إضافة</td><td>بيع منتج D</td><td>800</td><td>1,750</td></tr>
+            <tr><td>2025-01-25</td><td>خصم</td><td>سداد قرض</td><td>-300</td><td>1,450</td></tr>
+            <tr><td>2025-01-30</td><td>إضافة</td><td>بيع منتج E</td><td>600</td><td>2,050</td></tr>
+          </tbody>
+        </table>
+        <p>هذا الجدول يمكن توسيعه ليشمل جميع تفاصيل المعاملات المالية مع إمكانية التصفية والبحث.</p>
+      </div>
+    </div>
+  </div> 
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+      const activeSection = document.getElementById(sectionId);
+      if (activeSection) {
+        activeSection.style.display = 'block';
+      }
+    }
+  </script>
+  
+</body>
+</html>

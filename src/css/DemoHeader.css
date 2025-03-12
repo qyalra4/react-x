@@ -1,0 +1,52 @@
+.demo-header {
+    background: #333;
+    padding: 0.6rem;
+    box-shadow: 0 1px 1px #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .demo-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .demo-home-link {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: color 0.3s;
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
+  
+  .demo-home-link:hover {
+    color: #3498db;
+  }
+  
+  .demo-title {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .titles {
+    display: flex;
+    color: #d0d0d0;
+    border-radius: 20px;
+    background-color: #846c57;
+  }
+
+  @media (max-width: 824px) {
+    .demo-header {
+    padding: 0.6rem;
+    }
+    .titles {
+      display: none;
+    }
+  }
