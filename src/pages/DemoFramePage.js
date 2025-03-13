@@ -15,12 +15,13 @@ function DemoFramePage() {
   return (
     <div className="demo-frame-container">
       <DemoHeader id={id} title={work.title} />
-      <iframe 
-        src={work.demoPath}
-        title={`تجربة برنامج ${work.title}`}
-        className="demo-frame"
-        allowFullScreen
-      />
+     <iframe 
+       src={process.env.PUBLIC_URL + '/demos/pro1.html'}
+       title={`تجربة برنامج ${work.title}`}
+       className="demo-frame"
+       allowFullScreen
+/>
+
 
       <iframe width="560" height="280" className="demo-phone"
          src="https://www.youtube.com/embed/YEQqHbWJUCY?si=zMn9UG3fpvTZhhJV" 
