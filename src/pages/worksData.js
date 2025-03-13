@@ -52,7 +52,7 @@ const worksData = [
     description: 'نظام متعدد البائعين مع دعم المدفوعات الإلكترونية، إدارة المخزون الذكية، تحليلات المبيعات المتقدمة، وتجربة مستخدم معربة بالكامل. يتضمن أدوات تسويق مدمجة ونظام تقييمات ذكي.',
     category: 'تصميم ويب',
     date: '2024-02-28',
-    demoPath: '/demos/pro2.html',
+    demoPath: process.env.PUBLIC_URL + '/demos/pro1.html',
   },
   { 
     id: 3,
@@ -65,7 +65,7 @@ const worksData = [
     description: 'حل طبي متكامل يشمل إدارة السجلات الصحية الإلكترونية (EHR)، جدولة المواعيد الذكية، نظام إنذار طبي، وتكامل مع الأجهزة الطبية. معتمد من هيئة الغذاء والدواء.',
     category: 'تطوير تطبيقات',
     date: '2024-04-10',
-    demoPath: process.env.PUBLIC_URL + '/demos/pro3.html',
+    demoPath: '/demos/pro3.html',
   },
   { 
     id: 4,
