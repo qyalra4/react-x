@@ -65,7 +65,7 @@ const worksData = [
     description: 'حل طبي متكامل يشمل إدارة السجلات الصحية الإلكترونية (EHR)، جدولة المواعيد الذكية، نظام إنذار طبي، وتكامل مع الأجهزة الطبية. معتمد من هيئة الغذاء والدواء.',
     category: 'تطوير تطبيقات',
     date: '2024-04-10',
-    demoPath: '/demos/pro3.html',
+    demoPath: process.env.PUBLIC_URL + '/demos/pro3.html',
   },
   { 
     id: 4,
