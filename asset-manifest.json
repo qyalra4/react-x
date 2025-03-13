@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/react-x/static/css/main.0e5f4286.css",
+    "main.js": "/react-x/static/js/main.e8e449b9.js",
+    "static/media/video2.mp4": "/react-x/static/media/video2.8b33f80d9fab200f21f5.mp4",
+    "static/media/video1.mp4": "/react-x/static/media/video1.ad9232340d0df9790955.mp4",
+    "static/media/mainImage.png": "/react-x/static/media/mainImage.fdbbf0984192036808a8.png",
+    "static/media/20.jpg": "/react-x/static/media/20.257e37522fcf92cdc099.jpg",
+    "static/media/10.jpg": "/react-x/static/media/10.14abef60fe1ede15c16b.jpg",
+    "static/media/18.jpg": "/react-x/static/media/18.bb6cef2bdef7bdff4d80.jpg",
+    "static/media/19.jpg": "/react-x/static/media/19.f8fc407023841055dcdb.jpg",
+    "static/media/13.jpg": "/react-x/static/media/13.04d54ef806d552456b03.jpg",
+    "static/media/16.jpg": "/react-x/static/media/16.2127ff7a8727113cce02.jpg",
+    "static/media/15.jpg": "/react-x/static/media/15.3e522d8a22f4cf91fabe.jpg",
+    "static/media/12.jpg": "/react-x/static/media/12.dc814d7cc748c634f5e8.jpg",
+    "static/media/8.jpg": "/react-x/static/media/8.3167035a08d055d09237.jpg",
+    "static/media/14.jpg": "/react-x/static/media/14.2d267892214d02e6657d.jpg",
+    "static/media/6.jpg": "/react-x/static/media/6.bdb6560ee378dfd4b01a.jpg",
+    "static/media/9.jpg": "/react-x/static/media/9.b39aff5fc776daa91e17.jpg",
+    "static/media/2.jpg": "/react-x/static/media/2.fcb1e909b298f9b754b2.jpg",
+    "static/media/11.jpg": "/react-x/static/media/11.fa29b33b0d7c5a981a7d.jpg",
+    "static/media/3.jpg": "/react-x/static/media/3.2d95f4ca254a7c4a2261.jpg",
+    "static/media/17.jpg": "/react-x/static/media/17.e9a40d3e28284e30fc3f.jpg",
+    "static/media/4.jpg": "/react-x/static/media/4.a73d1e4864ef4b00e98e.jpg",
+    "static/media/5.jpg": "/react-x/static/media/5.dd215e9500c3dcd2dcab.jpg",
+    "static/media/7.jpg": "/react-x/static/media/7.185eaa793af24e3018d4.jpg",
+    "static/media/1.jpg": "/react-x/static/media/1.5394195f8cf8ddb69a55.jpg",
+    "static/media/logo.jpg": "/react-x/static/media/logo.d5abac1f80aa54dc99b3.jpg",
+    "static/media/box.jpg": "/react-x/static/media/box.dd490214044a5cdd11d6.jpg",
+    "static/media/main_sub.jpg": "/react-x/static/media/main_sub.a146acbc189e7548ae96.jpg",
+    "static/media/sub.jpg": "/react-x/static/media/sub.016590ab2cb91eba4834.jpg",
+    "index.html": "/react-x/index.html",
+    "main.0e5f4286.css.map": "/react-x/static/css/main.0e5f4286.css.map",
+    "main.e8e449b9.js.map": "/react-x/static/js/main.e8e449b9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e5f4286.css",
+    "static/js/main.e8e449b9.js"
+  ]
+}

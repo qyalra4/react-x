@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>نظام إدارة العملاء</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f7f7f7;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000;
+      padding: 10px;
+      color: #fff;
+    }
+    .header .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+    .header .logo img {
+      height: 40px;
+      width: auto;
+    }
+    .header .date-time {
+      font-size: 0.9rem;
+    }
+    .main-container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      height: calc(100vh - 60px);
+    }
+    .sidebar {
+      background-color: #e0f2f1;
+      padding: 10px;
+      overflow-y: auto;
+      border-left: 2px solid #004d40;
+    }
+    .sidebar h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #004d40;
+    }
+    .sidebar button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 8px;
+      border: none;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      text-align: center;
+      transition: background-color 0.3s;
+      border-radius: 3px;
+    }
+    .sidebar button:hover {
+      background-color: #b2dfdb;
+    }
+    .content {
+      padding: 15px;
+      overflow-y: auto;
+      background-color: #fafafa;
+    }
+    .content-section {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .content-section h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #004d40;
+    }
+    .content-section p {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    table th {
+      background-color: #e0f2f1;
+    }
+    table tbody tr:nth-child(even) {
+      background-color: #f1f8e9;
+    }
+    .footer-buttons {
+      margin-top: 20px;
+    }
+    .footer-buttons button {
+      background-color: #d1c4e9;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+      margin-top: 5px;
+      width: 100%;
+      border-radius: 3px;
+    }
+    @media (max-width: 768px) {
+      .main-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+      }
+      .sidebar {
+        order: 2;
+        border-left: none;
+        border-top: 2px solid #004d40;
+      }
+      .content {
+        order: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="date-time">09/02/2025 - 0:12</div>
+    <div class="logo">
+      <img src="./images/logo.jpg" alt="Logo">
+      إدارة العملاء
+    </div>
+  </div>
+  
+  <div class="main-container">
+    <div class="sidebar">
+      <h3>القائمة الرئيسية</h3>
+      <button onclick="showSection('customer-list')">قائمة العملاء</button>
+      <button onclick="showSection('add-customer')">إضافة عميل</button>
+      <button onclick="showSection('update-customer')">تحديث بيانات</button>
+      <button onclick="showSection('customer-details')">تفاصيل العميل</button>
+      <button onclick="showSection('customer-reports')">تقارير العملاء</button>
+      <button onclick="showSection('customer-complaints')">شكاوى العملاء</button>
+      <button onclick="showSection('support')">تواصل الدعم</button>
+      <button onclick="showSection('customer-analysis')">تحليل العملاء</button>
+      <div class="footer-buttons">
+        <button>Backup</button>
+        <button>SHIFT</button>
+      </div>
+    </div>
+    
+    <div class="content">
+      <div id="customer-list" class="content-section" style="display: block;">
+        <h2>قائمة العملاء</h2>
+        <p>جدول يوضح بيانات العملاء المسجلين:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>اسم العميل</th>
+              <th>رقم الهاتف</th>
+              <th>البريد الإلكتروني</th>
+              <th>تاريخ التسجيل</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>أحمد علي</td><td>0123456789</td><td>ahmed@example.com</td><td>2025-01-10</td><td>نشط</td></tr>
+            <tr><td>محمد سمير</td><td>0987654321</td><td>mohamed@example.com</td><td>2025-02-15</td><td>نشط</td></tr>
+            <tr><td>نور حسن</td><td>0112233445</td><td>soad@example.com</td><td>2025-03-20</td><td>غير نشط</td></tr>
+            <tr><td>ليلى أحمد</td><td>0223344556</td><td>layla@example.com</td><td>2025-04-05</td><td>نشط</td></tr>
+            <tr><td>خالد منصور</td><td>0334455667</td><td>khaled@example.com</td><td>2025-05-12</td><td>نشط</td></tr>
+            <tr><td>نور الدين</td><td>0445566778</td><td>nour@example.com</td><td>2025-06-18</td><td>غير نشط</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div id="add-customer" class="content-section">
+        <h2>إضافة عميل جديد</h2>
+        <p>املأ النموذج لإضافة عميل جديد:</p>
+        <form>
+          <div style="margin-bottom: 10px;">
+            <label for="new-name">اسم العميل:</label>
+            <input type="text" id="new-name" placeholder="أدخل اسم العميل" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="new-phone">رقم الهاتف:</label>
+            <input type="text" id="new-phone" placeholder="أدخل رقم الهاتف" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="new-email">البريد الإلكتروني:</label>
+            <input type="email" id="new-email" placeholder="example@mail.com" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="new-address">العنوان:</label>
+            <input type="text" id="new-address" placeholder="أدخل العنوان" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="new-notes">ملاحظات:</label>
+            <textarea id="new-notes" rows="4" placeholder="أدخل أي ملاحظات..." style="width:100%; padding:8px;"></textarea>
+          </div>
+          <button type="submit" style="padding:10px 15px;">إضافة العميل</button>
+        </form>
+      </div>
+      
+      <div id="update-customer" class="content-section">
+        <h2>تحديث بيانات العميل</h2>
+        <p>قم بتحديث بيانات العميل عبر النموذج التالي:</p>
+        <form>
+          <div style="margin-bottom: 10px;">
+            <label for="update-id">رقم العميل:</label>
+            <input type="text" id="update-id" placeholder="أدخل رقم العميل" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="update-name">اسم العميل:</label>
+            <input type="text" id="update-name" placeholder="أدخل اسم العميل" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="update-phone">رقم الهاتف:</label>
+            <input type="text" id="update-phone" placeholder="أدخل رقم الهاتف" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="update-email">البريد الإلكتروني:</label>
+            <input type="email" id="update-email" placeholder="example@mail.com" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="update-address">العنوان:</label>
+            <input type="text" id="update-address" placeholder="أدخل العنوان" style="width:100%; padding:8px;">
+          </div>
+          <button type="submit" style="padding:10px 15px;">تحديث البيانات</button>
+        </form>
+      </div>
+      
+      <div id="customer-details" class="content-section">
+        <h2>تفاصيل العميل</h2>
+        <p>عرض تفصيلي لبيانات العميل المحدد:</p>
+        <div style="border:1px solid #ccc; padding:15px; border-radius:5px; margin-bottom:20px;">
+          <h3>أحمد علي</h3>
+          <p><strong>رقم الهاتف:</strong> 0123456789</p>
+          <p><strong>البريد الإلكتروني:</strong> ahmed@example.com</p>
+          <p><strong>العنوان:</strong> شارع المنصور, بغداد</p>
+          <p><strong>تاريخ التسجيل:</strong> 2025-01-10</p>
+          <p><strong>الحالة:</strong> نشط</p>
+        </div>
+        <p>قائمة بالطلبات/المعاملات الخاصة بالعميل:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>رقم الطلب</th>
+              <th>التاريخ</th>
+              <th>المبلغ (دولار)</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>ORD1001</td><td>2025-01-15</td><td>250</td><td>مكتمل</td></tr>
+            <tr><td>ORD1002</td><td>2025-02-10</td><td>400</td><td>قيد التنفيذ</td></tr>
+            <tr><td>ORD1003</td><td>2025-03-05</td><td>150</td><td>ملغي</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div id="customer-reports" class="content-section">
+        <h2>تقارير العملاء</h2>
+        <p>ملخصات وإحصائيات حول بيانات العملاء:</p>
+        <div style="display:flex; flex-wrap:wrap; gap:15px;">
+          <div style="flex:1 1 200px; background-color:#e8f5e9; padding:15px; border-radius:5px;">
+            <h3>إجمالي العملاء</h3>
+            <p style="font-size:1.5rem; font-weight:bold;">1,200</p>
+          </div>
+          <div style="flex:1 1 200px; background-color:#fff3e0; padding:15px; border-radius:5px;">
+            <h3>العملاء النشطون</h3>
+            <p style="font-size:1.5rem; font-weight:bold;">950</p>
+          </div>
+          <div style="flex:1 1 200px; background-color:#e3f2fd; padding:15px; border-radius:5px;">
+            <h3>متوسط الإنفاق</h3>
+            <p style="font-size:1.5rem; font-weight:bold;">$320</p>
+          </div>
+          <div style="flex:1 1 200px; background-color:#fce4ec; padding:15px; border-radius:5px;">
+            <h3>نسبة الارتداد</h3>
+            <p style="font-size:1.5rem; font-weight:bold;">8%</p>
+          </div>
+        </div>
+      </div>
+      
+      <div id="customer-complaints" class="content-section">
+        <h2>شكاوى العملاء</h2>
+        <p>جدول يوضح شكاوى العملاء:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>رقم الشكوى</th>
+              <th>اسم العميل</th>
+              <th>نوع الشكوى</th>
+              <th>التاريخ</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>CMP001</td><td>محمد سمير</td><td>خدمة</td><td>2025-02-20</td><td>قيد المراجعة</td></tr>
+            <tr><td>CMP002</td><td>نور حسن</td><td>منتج</td><td>2025-03-15</td><td>مرفوضة</td></tr>
+            <tr><td>CMP003</td><td>ليلى أحمد</td><td>تأخير</td><td>2025-04-10</td><td>تم الحل</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div id="support" class="content-section">
+        <h2>تواصل الدعم</h2>
+        <p>نموذج لإرسال طلب دعم:</p>
+        <form>
+          <div style="margin-bottom: 10px;">
+            <label for="support-id">رقم العميل:</label>
+            <input type="text" id="support-id" placeholder="أدخل رقم العميل" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="support-subject">الموضوع:</label>
+            <input type="text" id="support-subject" placeholder="أدخل موضوع الطلب" style="width:100%; padding:8px;">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="support-message">الرسالة:</label>
+            <textarea id="support-message" rows="4" placeholder="أدخل الرسالة..." style="width:100%; padding:8px;"></textarea>
+          </div>
+          <button type="submit" style="padding:10px 15px;">إرسال الطلب</button>
+        </form>
+        <p style="margin-top:15px;">سجل طلبات الدعم السابقة:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>رقم الطلب</th>
+              <th>التاريخ</th>
+              <th>الموضوع</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>SUP001</td><td>2025-02-25</td><td>استفسار عن الفاتورة</td><td>تم الرد</td></tr>
+            <tr><td>SUP002</td><td>2025-03-18</td><td>مشكلة في التسجيل</td><td>قيد المراجعة</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div id="customer-analysis" class="content-section">
+        <h2>تحليل العملاء</h2>
+        <p>عرض لبعض التحليلات والبيانات المتعلقة بسلوك العملاء:</p>
+        <div style="display:flex; flex-wrap:wrap; gap:15px;">
+          <div style="flex:1 1 200px; background-color:#e8f5e9; padding:15px; border-radius:5px;">
+            <h3>توزيع العملاء</h3>
+            <p style="font-size:1.2rem;">حسب المناطق</p>
+            <ul style="list-style: none; padding:0;">
+              <li>بغداد: 40%</li>
+              <li>ديالى: 25%</li>
+              <li>البصرة: 20%</li>
+              <li>كركوك: 15%</li>
+            </ul>
+          </div>
+          <div style="flex:1 1 200px; background-color:#fff3e0; padding:15px; border-radius:5px;">
+            <h3>الفئة العمرية</h3>
+            <p style="font-size:1.2rem;">متوسط الأعمار</p>
+            <ul style="list-style: none; padding:0;">
+              <li>18-25: 30%</li>
+              <li>26-35: 40%</li>
+              <li>36-50: 20%</li>
+              <li>50+: 10%</li>
+            </ul>
+          </div>
+          <div style="flex:1 1 200px; background-color:#e3f2fd; padding:15px; border-radius:5px;">
+            <h3>نسبة الاحتفاظ</h3>
+            <p style="font-size:1.5rem; font-weight:bold;">85%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+      const activeSection = document.getElementById(sectionId);
+      if(activeSection) {
+        activeSection.style.display = 'block';
+      }
+    }
+  </script>
+  
+</body>
+</html>

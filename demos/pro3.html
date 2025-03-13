@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>برنامج المحاسبي 2025</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Tahoma", sans-serif;
+      background-color: #2F4550;
+      color: #fff;
+    }
+
+    .top-bar {
+      background-color: #0D5C75;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .top-bar #time {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .top-bar button {
+      background-color: #FF4136;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: opacity 0.2s ease;
+    }
+
+    .top-bar button:hover {
+      opacity: 0.8;
+    }
+
+    .title {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .buttons-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      padding: 10px 20px;
+    }
+
+    .button-item {
+      background-color: #17A2B8; 
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 20px 10px;
+      text-align: center;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .button-item:hover {
+      background-color: #138496; 
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div id="time">00:00:00</div>
+    <button onclick="closePage()">CLOSE</button>
+  </div>
+
+  <div class="title">برنامج المحاسبي 2025</div>
+
+  <div class="buttons-container">
+    <button class="button-item" onclick="showContent('إدخال سند قيد')">إدخال سند قيد</button>
+    <button class="button-item" onclick="showContent('كشف حساب عميل')">كشف حساب عميل</button>
+    <button class="button-item" onclick="showContent('كشف حساب مورد')">كشف حساب مورد</button>
+    <button class="button-item" onclick="showContent('فواتير المبيعات')">فواتير المبيعات</button>
+    <button class="button-item" onclick="showContent('فواتير المشتريات')">فواتير المشتريات</button>
+    <button class="button-item" onclick="showContent('ميزان المراجعة')">ميزان المراجعة</button>
+    <button class="button-item" onclick="showContent('تقرير الأرباح')">تقرير الأرباح</button>
+    <button class="button-item" onclick="showContent('البنوك والمصارف')">البنوك والمصارف</button>
+    <button class="button-item" onclick="showContent('الاستشارات')">الاستشارات</button>
+    <button class="button-item" onclick="showContent('الإعدادات العامة')">الإعدادات العامة</button>
+  </div>
+
+  <script>
+    function updateTime() {
+      const timeElement = document.getElementById('time');
+      const now = new Date();
+      let hours = now.getHours().toString().padStart(2, '0');
+      let minutes = now.getMinutes().toString().padStart(2, '0');
+      let seconds = now.getSeconds().toString().padStart(2, '0');
+      timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    function closePage() {
+      alert('تم الضغط على زر الإغلاق');
+    }
+
+    function showContent(actionName) {
+      alert(`تم اختيار: ${actionName}`);
+    }
+  </script>
+
+</body>
+</html>
