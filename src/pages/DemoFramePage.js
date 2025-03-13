@@ -16,7 +16,7 @@ function DemoFramePage() {
     <div className="demo-frame-container">
       <DemoHeader id={id} title={work.title} />
      <iframe 
-       src={process.env.PUBLIC_URL + '/demos/pro1.html'}
+       src={process.env.PUBLIC_URL + work.demoPath}
        title={`تجربة برنامج ${work.title}`}
        className="demo-frame"
        allowFullScreen
